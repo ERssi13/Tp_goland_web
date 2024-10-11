@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compteur de vues</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+            background-color: {{ if .Pair }}#d4f1f9{{ else }}#f9d4d4{{ end }};
+        }
+        h1 {
+            font-size: 3em;
+            color: {{ if .Pair }}#0077b6{{ else }}#d00000{{ end }};
+        }
+        p {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ if .Pair }}Le nombre de vues est pair : {{ .Compteur }}{{ else }}Le nombre de vues est impair : {{ .Compteur }}{{ end }}</h1>
+    <p>Actualisez la page pour changer le compteur !</p>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .NomClasse }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 50%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        img {
+            width: 20px;
+            height: 20px;
+        }
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="center">{{ .NomClasse }}</h1>
+    <p class="center">Filière : {{ .Filiere }}</p>
+    <p class="center">Annee : {{ .Annee }}</p>
+    <p class="center">Nombre d'étudiants : {{ .NbEtudiants }}</p>
+
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Âge</th>
+            <th>Sexe</th>
+        </tr>
+        {{ range .Etudiants }}
+        <tr>
+            <td>{{ .Nom }}</td>
+            <td>{{ .Prenom }}</td>
+            <td>{{ .Age }}</td>
+            <td>
+                {{ if eq .Sexe "M" }}
+                    <img src="/image/male.png" alt="Masculin">
+                {{ else }}
+                    <img src="/image/female.png" alt="Féminin">
+                {{ end }}
+            </td>
+        </tr>
+        {{ end }}
+    </table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'utilisateur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        input {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulaire d'informations personnelles</h1>
+    <form action="/user/treatment" method="post">
+        <input type="text" name="nom" placeholder="Nom" required>
+        <input type="text" name="prenom" placeholder="Prénom" required>
+        <input type="text" name="date_naissance" placeholder="Date de naissance" required>
+        <select name="sexe" required>
+            <option value="">Sélectionnez le sexe</option>
+            <option value="masculin">Masculin</option>
+            <option value="féminin">Féminin</option>
+            <option value="autre">Autre</option>
+        </select>
+        <input type="submit" value="Envoyer">
+    </form>
+</body>
+</html>
